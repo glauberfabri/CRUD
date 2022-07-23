@@ -1,0 +1,142 @@
+﻿@model IEnumerable<DBFirst.Models.Cadastro>
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+@if(TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert" align="center"> 
+     <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemSucesso"]
+</div>
+}
+@if(TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-success" role="alert" align="center"> 
+     <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemErro"]
+</div>
+}
+
+<br />
+
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Criar um Novo Registro</a>
+</p>
+
+
+
+<table class="table table-hover table-sm">
+    <thead>
+        <tr>
+            
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Cnpj)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.RazaoSocial)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.NomeFantasia)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.TelefoneComercial)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Celular)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Logradouro)
+            </th>
+            <th scope="col"> 
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Complemento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bairro)
+            </th scope="col">
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Cep)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.NomeContato)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             
+            <td>
+                @Html.DisplayFor(modelItem => item.Cnpj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RazaoSocial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeFantasia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefoneComercial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Celular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Logradouro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Complemento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeContato)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Cnpj" class="btn btn-primary" >Editar</a>
+                <a asp-action="Details" asp-route-id="@item.Cnpj" class="btn btn-success" >Detalhes</a>
+                <a asp-action="Delete" asp-route-id="@item.Cnpj" class="btn btn-danger">Deletar</a>
+            </td>
+           
+        </tr>     
+}
+    </tbody>
+
+</table>
